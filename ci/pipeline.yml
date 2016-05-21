@@ -1,0 +1,23 @@
+---
+resources:
+- name: ecs-deployment-src
+  type: git
+  source:
+    uri: https://github.com/nkcraddock/ecs-deployment
+    branch: master
+- name: docker-repository
+  type: docker-image
+  source:
+    repository: {{docker-repository}} 
+    registry_mirror: {{docker-registry-mirror}}
+
+
+jobs:
+- name: ecs-deployment-resource-build
+  plan:
+  - get: ecs-deployment-src
+    trigger: true
+  - put: docker-repository
+    params:
+      build: .
+

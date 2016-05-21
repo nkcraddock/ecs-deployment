@@ -1,0 +1,18 @@
+
+#********** vim template********** 
+
+.*.sw[a-z]
+*.un~
+Session.vim
+ 
+
+#********** linux template********** 
+
+.*
+!.gitignore
+*~
+
+# KDE
+.directory
+ 
+ci/params.yml
