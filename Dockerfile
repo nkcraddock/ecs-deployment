@@ -14,8 +14,5 @@ RUN apk add bash
 
 RUN rm /var/cache/apk/*
 
-ADD in /opt/resource/in
-ADD out /opt/resource/out
-ADD check /opt/resource/check
-
-CMD ["aws"]
+ADD assets/ /opt/resource/
+RUN chmod +x /opt/resource/*

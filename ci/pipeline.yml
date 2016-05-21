@@ -19,5 +19,5 @@ jobs:
     trigger: true
   - put: docker-repository
     params:
-      build: .
+      build: ecs-deployment-src/
 
